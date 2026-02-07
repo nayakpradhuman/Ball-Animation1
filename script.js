@@ -30,14 +30,14 @@
     
 
 gsap.timeline({
-  scrollTrigger: {
-    trigger: "#camera-section",
-    start: "top 0%",
-    end: "+=2600",
-    pin: "#camera-section",
-    scrub: true,
-    anticipatePin: 1
-  }
+  // scrollTrigger: {
+  //   trigger: "#camera-section",
+  //   start: "top 0%",
+  //   end: "+=2600",
+  //   pin: "#camera-section",
+  //   scrub: true,
+  //   anticipatePin: 1
+  // }
 })
 .to(path, {
   strokeDashoffset: 0,
@@ -54,12 +54,13 @@ gsap.timeline({
 }, 0)
 
 
-.to(world, {
-    yPercent: -90,
-    ease: "sine.inOut",
-    duration: 0.6,
-  }, 0.12);
+// .to(world, {
+//     yPercent: -90,
+//     ease: "sine.inOut",
+//     duration: 0.6,
+//   }, 0.12);
 
 })
 
   
+
