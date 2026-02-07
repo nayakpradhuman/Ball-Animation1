@@ -10,7 +10,7 @@ html, body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gilroy-Regular', sans-serif;
-    background: #151515;
+    /* background: #151515; */
 }
 
 #camera-section {
@@ -54,4 +54,5 @@ position: relative;
     transform: translate(-50%, -50%);
   }
   
+
 
