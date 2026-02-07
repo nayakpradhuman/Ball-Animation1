@@ -27,6 +27,7 @@
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;
 
+    
 
 gsap.timeline({
   scrollTrigger: {
@@ -57,7 +58,8 @@ gsap.timeline({
     yPercent: -90,
     ease: "sine.inOut",
     duration: 0.6,
-  }, 0.15);
+  }, 0.12);
 
 })
+
   
