@@ -17,10 +17,11 @@ html, body{
 position: relative;
   height: 250vh;        /* CAMERA VIEWPORT */
   overflow: hidden; /* scroll space */
+  padding: 24px;
   }
 
 #world {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -45,12 +46,11 @@ position: relative;
     height: 100%;
   }
   .ball {
-    position: absolute;
+    position: abso;
     width: 18px;
     height: 18px;
     border-radius: 50%;
     background: white;
-    position: absolute;
     transform: translate(-50%, -50%);
   }
   
