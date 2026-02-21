@@ -1,18 +1,18 @@
-// const lenis = new Lenis({
-//     lerp: 0.06,
-//     wheelMultiplier: 1.1,
-//     touchMultiplier: 1.2,
-//     smooth: 1,
-//   });
+const lenis = new Lenis({
+    lerp: 0.06,
+    wheelMultiplier: 1.1,
+    touchMultiplier: 1.2,
+    smooth: 1,
+  });
   
   
-//   lenis.on("scroll", ScrollTrigger.update);
+  lenis.on("scroll", ScrollTrigger.update);
   
-//   gsap.ticker.add((time) => {
-//     lenis.raf(time * 1000);
-//   });
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
   
-//   gsap.ticker.lagSmoothing(0);
+  gsap.ticker.lagSmoothing(0);
   
 
   window.addEventListener("load", () => {
@@ -63,4 +63,5 @@ gsap.timeline({
 })
 
   
+
 
