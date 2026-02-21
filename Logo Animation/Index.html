@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+
+        .logo-container {
+            width: 408px;
+            height: 186px;
+            /* Added perspective for the 3D head turning effect */
+            perspective: 1000px; 
+        }
+
+        #interactive-face {
+            /* Smooth out the 3D head movement */
+            transition: transform 0.15s ease-out;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        /* Ensure smooth movement for facial features */
+        #left-pupil, #right-pupil, .eyebrow, #mouth-group {
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }
+
+        .eyebrow {
+            transform-box: fill-box;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <svg id="interactive-face" width="100%" height="100%" viewBox="0 0 408 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="face-outline">
+                <path d="M50.5 146C52.1 146 251.833 137.333 351.5 133M85.5 142.5C85.5 142.5 89.33 132.159 93.5 134C96.7202 135.422 96.5 142.5 96.5 142.5C96.5 142.5 102.16 133.02 107.5 134C111.574 134.748 115 141.5 115 141.5C115 141.5 116.128 135.797 119 135C122.595 134.002 126 141.5 126 141.5C126 141.5 129.182 135.779 132.5 136C135.269 136.185 138 140.5 138 140.5M278.5 135.5C278.5 135.5 281.631 120.546 287 123C291.221 124.929 290 134.5 290 134.5C290 134.5 294.78 126.742 299.5 127C303.92 127.242 308 134.5 308 134.5C308 134.5 310.256 126.766 314 127C317.172 127.199 319.5 133 319.5 133C319.5 133 323.896 128.6 327 129.5C328.994 130.078 331 133 331 133" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M284.5 94.4999C280.336 124.268 249.912 133.534 220 136.5C184.542 140.016 142.656 135.944 139 100.5C135.193 63.5831 181.39 35.9616 216.5 39.4999C281 46 289.231 60.6745 284.5 94.4999Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g id="mouth-group">
+                <path d="M190.546 110.29C190.524 110.409 190.53 110.535 190.577 110.648C190.624 110.761 190.708 110.851 190.815 110.9C190.922 110.95 191.045 110.955 191.162 110.918C191.278 110.881 191.378 110.803 191.454 110.71C191.454 110.71 191.454 110.71 191.454 110.71C191.526 110.631 191.61 110.531 191.69 110.441C192.447 109.591 193.295 108.68 193.901 108.416C193.901 108.416 193.901 108.416 193.901 108.416C194.436 108.182 195.517 108.096 196.522 108.014C196.643 108.004 196.773 107.996 196.882 107.986C197.001 107.981 197.123 107.95 197.223 107.882C197.324 107.814 197.395 107.715 197.422 107.603C197.45 107.49 197.432 107.37 197.374 107.263C197.316 107.157 197.223 107.073 197.118 107.014C197.118 107.014 197.118 107.014 197.118 107.014C196.986 106.947 196.869 106.889 196.742 106.833C195.684 106.404 194.557 106.041 193.099 106.584C193.099 106.584 193.099 106.584 193.099 106.584C191.522 107.399 191.04 108.67 190.647 109.889C190.61 110.02 190.578 110.148 190.546 110.29Z" fill="black"/>
+                <path d="M226.797 84.0975C226.688 84.0287 226.557 83.9992 226.429 84.0203C226.301 84.0413 226.187 84.1105 226.111 84.2136C226.035 84.3166 226.003 84.4462 226.021 84.5746C226.039 84.7031 226.106 84.8193 226.203 84.9025C226.203 84.9025 226.203 84.9025 226.203 84.9025C226.518 85.1753 226.846 85.4693 227.166 85.7607C230.1 88.575 234.104 92.1365 234.037 95.2264C234.035 95.2368 234.032 95.2472 234.03 95.2575C233.276 97.548 228.991 98.3533 225.771 98.8472C225.349 98.9062 224.903 98.9602 224.5 99C224.373 99.0107 224.251 99.0648 224.161 99.1575C224.071 99.2502 224.021 99.3728 224.021 99.5C224.021 99.6272 224.071 99.7498 224.161 99.8425C224.251 99.9352 224.373 99.9893 224.5 100C224.948 100.033 225.399 100.048 225.846 100.053C227.652 100.065 229.456 99.9283 231.269 99.4567C232.979 98.9565 235.236 98.2128 235.97 95.7425C235.977 95.7169 235.983 95.6912 235.988 95.6655C236.334 92.5181 234.392 90.8261 232.972 89.147C231.419 87.517 229.701 86.1199 227.901 84.8444C227.537 84.5882 227.172 84.3396 226.797 84.0975Z" fill="black"/>
+                <path d="M194.66 107.153C194.308 106.968 193.9 106.933 193.524 107.062C193.147 107.19 192.833 107.472 192.653 107.84C192.473 108.207 192.443 108.629 192.571 109.005C192.7 109.381 192.978 109.682 193.34 109.847C193.34 109.847 193.34 109.847 193.34 109.847C193.91 110.105 194.465 110.344 195.032 110.586C199.952 112.625 204.932 114.562 210.322 115.484C210.322 115.484 210.322 115.484 210.322 115.484C216.062 116.257 221.668 115.8 227.252 115.219C227.856 115.151 228.46 115.078 229.056 114.997C229.184 114.979 229.301 114.91 229.381 114.806C229.461 114.703 229.498 114.574 229.484 114.445C229.469 114.317 229.404 114.2 229.303 114.117C229.202 114.034 229.073 113.992 228.944 114.003C228.364 114.05 227.757 114.091 227.158 114.126C221.626 114.41 215.974 114.539 210.678 113.516C210.678 113.516 210.678 113.516 210.678 113.516C205.729 112.391 200.899 110.21 196.239 107.952C195.705 107.688 195.162 107.416 194.66 107.153Z" fill="black"/>
+            </g>
+            <path id="left-eyebrow" class="eyebrow" d="M177.309 64.0379C177.196 64.0924 177.107 64.1928 177.061 64.3132C177.015 64.4339 177.015 64.5646 177.063 64.6806C177.111 64.7965 177.203 64.8892 177.321 64.9421C177.439 64.9948 177.572 65.0033 177.691 64.962C177.691 64.962 177.691 64.962 177.691 64.962C178.086 64.8284 178.519 64.6922 178.938 64.5671C182.858 63.4471 187.178 62.4567 190.756 63.2572C193.908 64.1759 196.783 66.7956 199.221 69.4236C199.502 69.7326 199.8 70.0706 200.022 70.3477C200.357 70.76 200.836 71.0117 201.367 71.0358C201.896 71.0605 202.434 70.8555 202.848 70.4776C203.262 70.0998 203.515 69.5835 203.539 69.0539C203.564 68.5237 203.357 68.0237 202.978 67.6522C202.978 67.6522 202.978 67.6522 202.978 67.6522C202.603 67.285 202.273 66.9886 201.913 66.6713C198.864 64.0995 195.617 61.5445 191.244 60.7428C186.47 60.2985 182.479 61.9187 178.546 63.4858C178.132 63.6627 177.716 63.8454 177.309 64.0379Z" fill="black"/>
+            <path id="right-eyebrow" class="eyebrow" d="M261.191 61.2129C261.304 61.2674 261.393 61.3678 261.439 61.4882C261.485 61.6088 261.485 61.7396 261.437 61.8555C261.389 61.9715 261.297 62.0642 261.179 62.1171C261.061 62.1698 260.928 62.1783 260.809 62.137C260.809 62.137 260.809 62.137 260.809 62.137C260.414 62.0033 259.981 61.8671 259.562 61.742C255.642 60.622 251.322 59.6317 247.744 60.4321C244.592 61.3509 241.717 63.9705 239.279 66.5986C238.998 66.9075 238.7 67.2455 238.478 67.5227C238.143 67.935 237.664 68.1867 237.133 68.2107C236.604 68.2354 236.066 68.0304 235.652 67.6526C235.238 67.2748 234.985 66.7584 234.961 66.2289C234.936 65.6987 235.143 65.1987 235.522 64.8272C235.522 64.8272 235.522 64.8272 235.522 64.8272C235.897 64.46 236.227 64.1635 236.587 63.8462C239.636 61.2744 242.883 58.7195 247.256 57.9178C252.03 57.4735 256.021 59.0936 259.954 60.6607C260.368 60.8376 260.784 61.0203 261.191 61.2129Z" fill="black"/>
+            <path d="M153 79.5C153 79.5 137 77 134 78C130.222 79.2595 132 88 132 88" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M215.5 77C215.5 77 219.086 75.5818 221.5 75.5C224.294 75.4053 228.5 77 228.5 77" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <ellipse id="left-pupil" cx="188" cy="79.5" rx="7" ry="7.5" fill="black"/>
+            <ellipse id="right-pupil" cx="247" cy="75.5" rx="7" ry="7.5" fill="black"/>
+            <path d="M153.5 79.5C152.839 65.288 164.535 55.7182 178.5 53C195.245 49.7407 214.917 59.9407 215 77C215.076 92.6513 200.149 102.739 184.5 103C169.311 103.253 154.205 94.6752 153.5 79.5Z" fill="white" fill-opacity="0.45" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M228 77C225.207 61.3542 239.607 47.0422 255.5 47C267.849 46.9672 277.875 53.1946 281.5 65C286.316 80.6838 271.899 97.4969 255.5 98C241.994 98.4144 230.375 90.3023 228 77Z" fill="white" fill-opacity="0.45" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <script>
+        const svgElement = document.getElementById('interactive-face');
+        const leftPupil = document.getElementById('left-pupil');
+        const rightPupil = document.getElementById('right-pupil');
+        const leftEyebrow = document.getElementById('left-eyebrow');
+        const rightEyebrow = document.getElementById('right-eyebrow');
+        const mouthGroup = document.getElementById('mouth-group');
+
+        // Movement limits
+        const pupilMaxMove = 8; 
+        const eyebrowMaxMove = 10; 
+        const eyebrowMaxRotate = 15; 
+        const mouthMaxMove = 5; 
+        
+        // NEW: Max degrees the whole head will tilt
+        const headMaxTilt = 15; 
+
+        // Listen to the whole window to make it highly reactive
+        window.addEventListener('mousemove', (e) => {
+            const svgRect = svgElement.getBoundingClientRect();
+            const svgCenterX = svgRect.left + svgRect.width / 2;
+            const svgCenterY = svgRect.top + svgRect.height / 2;
+
+            const mouseXRelativeToCenter = e.clientX - svgCenterX;
+            const mouseYRelativeToCenter = e.clientY - svgCenterY;
+
+            // Normalize mouse position relative to the whole window for broader tracking
+            const normalizedX = Math.max(-1, Math.min(1, mouseXRelativeToCenter / (window.innerWidth / 2)));
+            const normalizedY = Math.max(-1, Math.min(1, mouseYRelativeToCenter / (window.innerHeight / 2)));
+
+            // --- 1. HEAD TILT (3D Effect) ---
+            const rotateX = -normalizedY * headMaxTilt; // Look up/down
+            const rotateY = normalizedX * headMaxTilt;  // Look left/right
+            svgElement.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            // --- 2. FACIAL FEATURES ---
+            const angle = Math.atan2(mouseYRelativeToCenter, mouseXRelativeToCenter);
+            const distance = Math.min(pupilMaxMove, Math.hypot(mouseXRelativeToCenter, mouseYRelativeToCenter) / 20); 
+            const pupilX = Math.cos(angle) * distance;
+            const pupilY = Math.sin(angle) * distance;
+
+            leftPupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+            rightPupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+
+            const eyebrowTranslateY = normalizedY * eyebrowMaxMove; 
+            const eyebrowRotate = normalizedY > 0 ? normalizedY * eyebrowMaxRotate : 0;
+
+            leftEyebrow.style.transform = `translateY(${eyebrowTranslateY}px) rotate(${-eyebrowRotate}deg)`;
+            rightEyebrow.style.transform = `translateY(${eyebrowTranslateY}px) rotate(${eyebrowRotate}deg)`;
+
+            const mouthTranslateY = normalizedY * mouthMaxMove;
+            mouthGroup.style.transform = `translateY(${mouthTranslateY}px)`;
+        });
+
+        // Reset to center when mouse leaves the window
+        window.addEventListener('mouseleave', () => {
+            svgElement.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            leftPupil.style.transform = 'translate(0, 0)';
+            rightPupil.style.transform = 'translate(0, 0)';
+            leftEyebrow.style.transform = 'translateY(0) rotate(0)';
+            rightEyebrow.style.transform = 'translateY(0) rotate(0)';
+            mouthGroup.style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+</html>
